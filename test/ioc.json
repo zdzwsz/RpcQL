@@ -1,0 +1,68 @@
+{
+    "User": {
+        "type": "meta",
+        "note": "这是一个User对象",
+        "fields": {"name":["string","姓名"],
+                  "age":["int","年龄"],
+                  "friend":["@Friend","朋友"]}
+    },
+    "Friend":{
+        "type":"meta",
+        "note": "这是Friend对象",
+        "fields":{
+            "name":["string","姓名"],
+            "age":["int","年龄"]
+        }
+    },
+
+    "Hello": {
+        "type": "rpc",
+        "note": "这是一个类的注释",
+        "methods": [
+            {
+                "name": "sayHelloByMe",
+                "note": "这是一个描述方法的注释",
+                "return": "string",
+                "parameters": {
+                    "name": "string"
+                }
+            },
+            {
+                "name": "sayUser",
+                "return": "string",
+                "parameters": {
+                    "user": "@User"
+                }
+            },
+            {
+                "name":"sayHelloFriends",
+                "parameters": {
+                    "friends": "string[]"
+                }
+            },
+            {
+                "name":"getUser",
+                "parameters": {
+                    "id": "string"
+                },
+                "return":"@Friend"
+            }
+        ]
+    },
+
+    "HelloMe": {
+        "type": "rpc",
+        "note": "这是一个类的注释",
+        "methods": [
+            {
+                "name": "sayHelloByMe1",
+                "note": "这是一个描述方法的注释",
+                "return": "string",
+                "parameters": {
+                    "name": "string"
+                }
+            }
+        ]
+    }
+
+}
